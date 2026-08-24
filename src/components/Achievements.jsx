@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Trophy, ShieldCheck, Award, Users, GraduationCap, Calendar, Star, Building2, BrainCircuit } from 'lucide-react';
+import { Trophy, ShieldCheck, Award, Users, GraduationCap, Calendar, Star, Building2, BrainCircuit, ExternalLink, FileText } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 const iconMap = {
@@ -61,11 +61,18 @@ export default function Achievements() {
             <div className="grid gap-4 sm:grid-cols-2">
               {filteredAchievements.map((item, idx) => {
                 const IconComponent = iconMap[item.icon] || Trophy;
+                const CardWrapper = item.certificateUrl ? 'a' : 'div';
+                const wrapperProps = item.certificateUrl ? {
+                  href: item.certificateUrl,
+                  target: "_blank",
+                  rel: "noreferrer",
+                  className: "group rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:border-teal-400 hover:bg-teal-500/10 hover:shadow-[0_0_25px_rgba(45,212,191,0.25)] flex flex-col justify-between cursor-pointer"
+                } : {
+                  className: "group rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:border-teal-500/40 hover:bg-white/[0.06] hover:shadow-[0_0_20px_rgba(45,212,191,0.15)] flex flex-col justify-between"
+                };
+
                 return (
-                  <div
-                    key={idx}
-                    className="group rounded-xl border border-white/10 bg-white/[0.03] p-5 transition-all duration-300 hover:border-teal-500/40 hover:bg-white/[0.06] hover:shadow-[0_0_20px_rgba(45,212,191,0.15)] flex flex-col justify-between"
-                  >
+                  <CardWrapper key={idx} {...wrapperProps}>
                     <div>
                       <div className="flex items-center gap-3">
                         <div className="rounded-lg border border-teal-500/30 bg-teal-500/10 p-2.5 text-teal-300 group-hover:scale-110 transition-transform">
@@ -75,8 +82,11 @@ export default function Achievements() {
                           <span className="font-mono text-[11px] text-teal-400 block font-semibold uppercase tracking-wider">
                             {item.subtitle}
                           </span>
-                          <h3 className="font-heading text-base font-bold text-white group-hover:text-sky-300 transition-colors">
-                            {item.title}
+                          <h3 className="font-heading text-base font-bold text-white group-hover:text-teal-300 transition-colors flex items-center gap-1.5">
+                            <span>{item.title}</span>
+                            {item.certificateUrl && (
+                              <ExternalLink className="h-3.5 w-3.5 text-teal-400 shrink-0 inline-block" />
+                            )}
                           </h3>
                         </div>
                       </div>
@@ -89,14 +99,19 @@ export default function Achievements() {
                       <span className="rounded border border-white/10 bg-black/40 px-2 py-0.5 font-mono text-[10px] text-slate-400">
                         {item.category}
                       </span>
+                      {item.certificateUrl && (
+                        <span className="inline-flex items-center gap-1 font-mono text-[11px] font-semibold text-teal-300 group-hover:underline">
+                          <FileText className="h-3 w-3" /> View Certificate
+                        </span>
+                      )}
                     </div>
-                  </div>
+                  </CardWrapper>
                 );
               })}
             </div>
           </div>
 
-          {/* Right Column: Education Background (No CGPA) */}
+          {/* Right Column: Education Background */}
           <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-3 border-b border-white/10 pb-4 mb-6">

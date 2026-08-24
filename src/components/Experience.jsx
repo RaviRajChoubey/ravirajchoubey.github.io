@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Building2, Award, CheckCircle2, MapPin } from 'lucide-react';
+import { Calendar, Building2, Award, CheckCircle2, MapPin, FileText, ExternalLink } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
 
 export default function Experience() {
@@ -37,9 +37,25 @@ export default function Experience() {
 
                 {/* Left Column: Metadata & Tags */}
                 <div>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-3 py-1 font-mono text-xs font-semibold text-teal-300">
-                    <Calendar className="h-3.5 w-3.5" />
-                    <span>{exp.period}</span>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-teal-500/30 bg-teal-500/10 px-3 py-1 font-mono text-xs font-semibold text-teal-300">
+                      <Calendar className="h-3.5 w-3.5" />
+                      <span>{exp.period}</span>
+                    </div>
+
+                    {exp.certificateUrl && (
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href={exp.certificateUrl}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-teal-400/40 bg-teal-500/20 px-3 py-1 font-mono text-xs font-semibold text-teal-200 hover:bg-teal-500/30 hover:text-white transition-all shadow-sm"
+                        title="View Official Internship Certificate"
+                      >
+                        <FileText className="h-3.5 w-3.5 text-teal-300" />
+                        <span>View Certificate</span>
+                        <ExternalLink className="h-3 w-3 opacity-70" />
+                      </a>
+                    )}
                   </div>
 
                   <h3 className="mt-4 text-2xl font-bold text-white">

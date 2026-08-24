@@ -69,6 +69,7 @@ export const portfolioData = {
       location: "New Delhi",
       period: "May 2026 – Jun 2026",
       badge: "Govt. of India",
+      certificateUrl: "https://drive.google.com/file/d/16EmA4bIwVlp6tDsgpA7xaMtU59D6nHqh/view?usp=drive_link",
       highlights: [
         "Architected an AI-powered Database Migration Platform for the e-Jagriti system (Dept. of Consumer Affairs) using FastAPI, PostgreSQL, and React.js, automating schema analysis and end-to-end migration workflows.",
         "Built automated validation pipelines with checksum-based reconciliation, rollback generation, and audit-trail logging, enabling zero-data-loss migrations with real-time monitoring.",
@@ -84,6 +85,7 @@ export const portfolioData = {
       location: "Data Science Team",
       period: "March 2026 – April 2026",
       badge: "Data Science Internship",
+      certificateUrl: "https://drive.google.com/file/d/1HJFYAgR0EwwAKDkZXrBmPt88b0KXe8ds/view?usp=drive_link",
       highlights: [
         "Cleaned and preprocessed complex datasets for AI/ML projects, resolving duplicates, missing values, and outliers to improve data quality and model reliability.",
         "Engineered features and partitioned data into training, validation, and test sets; trained and evaluated machine learning models in Python using Scikit-learn.",
@@ -239,14 +241,16 @@ export const portfolioData = {
       subtitle: "Full-Stack Developer Intern",
       description: "Architected e-Jagriti AI database migration platform at National Informatics Centre (MeitY). Zero data loss validation, commended by DDG.",
       icon: "Building2",
-      category: "Internships"
+      category: "Internships",
+      certificateUrl: "https://drive.google.com/file/d/16EmA4bIwVlp6tDsgpA7xaMtU59D6nHqh/view?usp=drive_link"
     },
     {
       title: "Cestrum Data Science Intern",
       subtitle: "AI/ML Data Science Intern",
       description: "Engineered features, preprocessed complex datasets, trained & evaluated Scikit-learn ML models, and built reproducible data workflows.",
       icon: "BrainCircuit",
-      category: "Internships"
+      category: "Internships",
+      certificateUrl: "https://drive.google.com/file/d/1HJFYAgR0EwwAKDkZXrBmPt88b0KXe8ds/view?usp=drive_link"
     },
     {
       title: "Smart India Hackathon Finalist",
