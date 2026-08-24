@@ -27,6 +27,12 @@ export const portfolioData = {
       institution: "Sunbeam Academy, Varanasi",
       period: "2022",
       details: "Completed Higher Secondary Education with focus on Physics, Chemistry, and Mathematics."
+    },
+    {
+      degree: "Class X (CBSE)",
+      institution: "Sunbeam Academy, Varanasi",
+      period: "2020",
+      details: "Completed Secondary School Education with strong academic foundation in Mathematics and Science."
     }
   ],
 
